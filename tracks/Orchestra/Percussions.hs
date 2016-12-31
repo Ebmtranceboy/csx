@@ -1,7 +1,9 @@
 module Orchestra.Percussions where
 import Csound.Base
 
-kick = do       seed 20151013
+kick = do 
+               -- setksmps 1
+                seed 20151013
                 rndL <- random (-1) 1
                 rndR <- random (-1) 1
                 let rndEnv = expseg [1, 0.02, 0.06, 0.02, 0.01, 0.12, 0.00001, 0.12, 0.00001]
