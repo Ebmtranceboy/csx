@@ -68,22 +68,25 @@ melody =
                                                     ,0.08,1.00,0.08,1.05,1.00,1.08,1.05,2.10,2.08,2.00,1.05,1.04
                                                     ,1.02,1.00,1.07
                                                     ]
-
+{-
 main = dac $ sum [melody
                  ,rush
                  ,bass 6
                  ,satellite
                  ]
+                 
+-}
                                                      
-{-
+
 
 main = dac $ sum [return melody
-                 --,return $ bass 6
+                 ,return $ bass 6
                 , return rush
-                 --, return satellite
+                 , return satellite
                   ,atMidi polySynth
                  ]
 
+{-
 main = dac $ sum $ [mul 0.5 $ loopWav 1 "../../../Desktop/perso/loops/loop-108-rush.wav"
                    , loopWav (1) "../../../Desktop/perso/loops/loop-108.wav"
                    , mul 1.5 $ loopWav (1) "../../../Desktop/perso/loops/loop-108-piano.wav"
